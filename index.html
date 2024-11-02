@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATHRI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: lightslategray;
+      min-height: 100vh; /* Ensures full height for centering */
+      justify-content: center; /* Centers content vertically */
+    }
+    header {
+      width: 100%;
+      background-color: darkgray;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .sponsor {
+      width: 80%;
+      max-width: 600px; /* Sets a maximum width for the sponsor section */
+      margin: 20px 0;
+      text-align: center;
+    }
+    .sponsor img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .search-container {
+      margin: 20px 0;
+      text-align: center;
+      width: 80%; /* Ensures it is responsive */
+      max-width: 600px; /* Sets a maximum width */
+    }
+    .search-container input {
+      padding: 10px;
+      width: 100%; /* Fills the container */
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    .clock-weather {
+      display: flex;
+      align-items: center;
+      font-size: 22px;
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      margin-top: 10px; 
+      box-shadow: 10PX 10PX 10PX;
+    
+    }
+    .clock, .weather {
+      margin: 0 15px;
+    }
+    .restdiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: darkgray;
+      padding: 20px;
+      border-radius: 20px;
+      width: 80%; /* Ensures responsive width */
+      max-width: 600px; /* Sets a maximum width */
+      margin: 10px 0;
+      text-align: center;
+    }
+    .image-container {
+      background-color: grey;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin: 5px 0;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .image-container img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .sectitles {
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .names {
+      font-size: large;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: white;
+    }
+    .countdown {
+      font-size: 20px;
+      color: #ffffff;
+      margin-top: 10px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 10PX 10PX 10PX;
+    }
+    footer.myfooter {
+      margin-top: 20px;
+      font-size: small;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>ATHRI</header>
+
+  <div class="sponsor">
+    <div class="gishru">
+      <h1 class="sectitles">SPONSORED BY:</h1>
+      <img src="images.jfif" alt="Sponsor Image" />
+      <h4>GISHRU ORGANIZATION</h4>
+    </div>
+  </div>
+
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search for places..." onkeyup="filterImages()">
+    <div class="clock-weather">
+      <div class="clock" id="clock">Duhok Time</div>
+      <div class="weather" id="weather">Weather: 25°C, Clear</div>
+    </div>
+    <div class="countdown" id="countdown"></div> <!-- Countdown moved here -->
+  </div>
+
+  <div class="restdiv" data-name="WHATS NEW">
+    <H1>WHATS NEW!!</H1>
+  </div>
+
+  <div class="restdiv" data-name="Sweets & Refreshments">
+    <h1 class="sectitles">Sweets & Refreshments</h1>
+    
+    <div class="image-container" data-name="Roben Kunafa">
+      <a href="https://www.google.com/maps/place/Roben+Kunafa">
+        <img src="download.jfif" alt="Roben Kunafa">
+        <h4 class="names">Roben Kunafa</h4>
+      </a>
+    </div>
+
+    <div class="image-container" data-name="Happy Day">
+      <a href="https://www.google.com/maps/place/Happy+day+sweets">
+        <img src="images (2).jfif" alt="Happy Day">
+        <h4 class="names">Happy Day</h4>
+      </a>
+    </div>
+
+    <div class="image-container" data-name="Gashtyar">
+      <a href="https://www.google.com/maps/place/Happy+day+sweets">
+        <img src="images.png" alt="Gashtyar">
+        <h4 class="names">Gashtyar</h4>
+      </a>
+    </div>
+  </div>
+
+  <div class="restdiv" data-name="Villages and Historical Sites">
+    <h1 class="sectitles">Villages and Historical Sites</h1>
+
+    <div class="image-container" data-name="Barwar">
+      <a href="https://www.google.com/maps/search/barwari+bala">
+        <img src="DtQ3ITWWwAAywr5.jpg" alt="Barwar">
+        <h4 class="names">Barwar</h4>
+      </a>
+    </div>
+
+    <div class="image-container" data-name="Nalla">
+      <a href="https://www.google.com/maps/place/Nahla">
+        <img src="images (1).jfif" alt="Nalla">
+        <h4 class="names">Nalla</h4>
+      </a>
+    </div>
+
+    <div class="image-container" data-name="Khanis">
+      <a href="https://www.google.com/maps/place/Khinis+Assyrian+Reliefs">
+        <img src="images (3).jfif" alt="Khanis">
+        <h4 class="names">Khanis</h4>
+      </a>
+    </div>
+  </div>
+
+  <footer class="myfooter">
+    <p>This web page is proudly made by <a href="#">ENWATECHX</a> for serving our Assyrian/chaldean people, made for showing and guiding our people around the world the places that are managed by the assyrian/chaldean people and also for helping the people around the world to explore more about their roots. more details: visit our page on Instagram.</p>
+  </footer>
+
+  <script>
+    function filterImages() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const restdivs = document.querySelectorAll('.restdiv');
+
+      // If the search input is empty, show all divs and images
+      if (input === '') {
+        restdivs.forEach(div => {
+          div.style.display = 'block';
+          const images = div.querySelectorAll('.image-container');
+          images.forEach(image => {
+            image.style.display = 'block';
+          });
+        });
+        return; // Exit the function early since all items are shown
+      }
+
+      // Otherwise, filter divs and images based on the input
+      restdivs.forEach(div => {
+        const divName = div.getAttribute('data-name').toLowerCase();
+        let hasMatch = false;
+
+        if (divName.includes(input)) {
+          div.style.display = 'block';
+          hasMatch = true;
+        } else {
+          const images = div.querySelectorAll('.image-container');
+          images.forEach(image => {
+            const imageName = image.getAttribute('data-name').toLowerCase();
+            if (imageName.includes(input)) {
+              image.style.display = 'block';
+              div.style.display = 'block';
+              hasMatch = true;
+            } else {
+              image.style.display = 'none';
+            }
+          });
+        }
+
+        if (!hasMatch) div.style.display = 'none';
+      });
+    }
+
+    function updateClock() {
+      const options = { timeZone: 'Asia/Baghdad', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+      const currentTime = new Date().toLocaleTimeString('en-GB', options);
+      document.getElementById('clock').textContent = `Duhok Time: ${currentTime}`;
+    }
+
+    function updateWeather() {
+      document.getElementById('weather').textContent = "Weather: 25°C, Clear";
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const nextApril = new Date(now.getFullYear(), 3, 1); // Month is 0-indexed, so 3 is April
+
+      // If today is past April 1st of this year, set to next year
+      if (now > nextApril) {
+        nextApril.setFullYear(nextApril.getFullYear() + 1);
+      }
+
+      const distance = nextApril - now;
+
+      // Calculate time components
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Display the result in the countdown element
+      document.getElementById('countdown').textContent = 
+        `ASSYRIAN/CHALDEAN NEW YEAR ${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+      // Update every second
+      setTimeout(updateCountdown, 1000);
+    }
+
+    setInterval(updateClock, 1000);
+    updateWeather();
+    updateCountdown(); // Start countdown timer
+  </script>
+</body>
+</html>
+
